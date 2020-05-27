@@ -1,0 +1,14 @@
+#intro {
+    margin-top: 3em;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.intro__align--center {
+    display: flex;
+    align-items: center;
+    margin-bottom: .5em;
+    .icon{
+        margin-right: .5em;
+    }
+}

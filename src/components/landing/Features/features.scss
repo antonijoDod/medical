@@ -1,0 +1,18 @@
+#features .icon-wraper {
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    margin: 3em auto 2em auto;
+    .features-icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+#features button {
+    margin-top: 2em;
+}
