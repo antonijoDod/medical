@@ -4,7 +4,7 @@ import DepartmentHero from "../components/department/DepartmentHero"
 import DepartmentText from "../components/department/DepartmentText"
 import DepartmentNavigation from "../components/department/DepartmentNavigation"
 
-const Department = (context, link) => {
+const Department = (context) => {
   const {
     departmentsName,
     departmentsDescription,
@@ -13,8 +13,8 @@ const Department = (context, link) => {
     workingTime,
     phoneNumber,
     eMail,
-  } = context.pageContext
-  console.log(link)
+  } = context.pageContext.node
+  const {prev, next} = context.pageContext
   return (
     <Layout>
       <DepartmentHero departmentImage={departmentImage.fluid.src} />
@@ -26,7 +26,7 @@ const Department = (context, link) => {
         phoneNumber={phoneNumber}
         eMail={eMail}
       />
-      <DepartmentNavigation />
+      <DepartmentNavigation prev={prev} next={next} />
     </Layout>
   )
 }

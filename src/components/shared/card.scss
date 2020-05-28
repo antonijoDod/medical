@@ -1,0 +1,10 @@
+.image__box {
+    height: 200px;
+    width: 100%;
+}
+
+.image__box--center {
+    width:  100%;
+    height: 100%;
+    object-fit: cover;
+}
