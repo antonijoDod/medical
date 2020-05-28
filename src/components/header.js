@@ -1,7 +1,9 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React, {useState} from "react"
+import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
+
 import "../scss/main.scss"
 
 const departmentsLinks = graphql`
@@ -20,7 +22,8 @@ const departmentsLinks = graphql`
 
 const Header = ({ siteTitle }) => {
   const departmentsLinksQuery = useStaticQuery(departmentsLinks)
-  const [isActive, setisActive] = useState(false);
+  const [isActive, setIsActive] = useState(false)
+
   return (
     <header>
       <nav
@@ -35,9 +38,9 @@ const Header = ({ siteTitle }) => {
             </Link>
 
             <a
-             onClick={() => {
-              setisActive(!isActive);
-            }}
+              onClick={() => {
+                setIsActive(!isActive)
+              }}
               role="button"
               className={`navbar-burger burger ${isActive ? "is-active" : ""}`}
               aria-label="menu"
@@ -50,38 +53,58 @@ const Header = ({ siteTitle }) => {
             </a>
           </div>
 
-          <div id="navbarBasicExample" className={`navbar-menu ${isActive ? "is-active" : ""}`}>
+          <div
+            id="navbarBasicExample"
+            className={`navbar-menu ${isActive ? "is-active" : ""}`}
+          >
             <div className="navbar-start">
               <div className="navbar-item has-dropdown is-hoverable"></div>
             </div>
 
             <div className="navbar-end">
-              <Link
+              <AniLink
+                cover
+                bg="#3E73DC"
                 to="/"
                 activeClassName="has-text-primary"
                 className="navbar-item"
+                onClick={() => setIsActive(false)}
               >
                 Home
-              </Link>
-              <a className="navbar-item">About</a>
+              </AniLink>
+              <AniLink
+                cover
+                bg="#3E73DC"
+                to="/about"
+                activeClassName="has-text-primary"
+                className="navbar-item"
+                onClick={() => setIsActive(false)}
+              >
+                About
+              </AniLink>
               <div className="navbar-item has-dropdown is-hoverable">
-                <Link
+                <AniLink
                   to="/departments"
+                  cover
+                  bg="#3E73DC"
                   activeClassName="has-text-primary"
                   className="navbar-link"
+                  onClick={() => setIsActive(false)}
                 >
                   Departments
-                </Link>
+                </AniLink>
                 <div className="navbar-dropdown">
                   {departmentsLinksQuery.links.edges.map(link => (
-                    <Link
+                    <AniLink
                       activeClassName="has-text-primary"
                       key={link.node.id}
                       to={`/departments/${link.node.slug}`}
-                      className="navbar-item"
+                      className="navbar-item" cover
+                      bg="#3E73DC"
+                      onClick={() => setIsActive(false)}
                     >
                       {link.node.departmentsName}
-                    </Link>
+                    </AniLink>
                   ))}
                 </div>
               </div>

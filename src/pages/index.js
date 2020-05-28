@@ -1,6 +1,5 @@
-import React from "react"
+import React, {Fragment} from "react"
 import { Link } from "gatsby"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import LandingHero from "../components/landing/LandingHero/LandingHero"
 import Intro from "../components/landing/Intro/Intro"
@@ -10,7 +9,7 @@ import Stats from "../components/landing/Stats/Stats"
 import Doctors from '../components/landing/Doctors/Doctors'
 
 const IndexPage = () => (
-  <Layout>
+  <Fragment>
     <SEO title="Home" />
      <LandingHero />
      <Intro />
@@ -18,7 +17,7 @@ const IndexPage = () => (
      <Special />
      <Stats />
      <Doctors />
-  </Layout>
+  </Fragment>
 )
 
 export default IndexPage

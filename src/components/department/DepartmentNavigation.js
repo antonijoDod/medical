@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
-
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import "./departmentNavigation.scss"
 
 const DepartmentNavigation = ({ prev, next }) => {
@@ -13,7 +13,7 @@ const DepartmentNavigation = ({ prev, next }) => {
           <div className="level-left">
             <div className="level-item">
               {prev ? (
-                <Link to={`/departments/${prev.slug}`}>
+                <AniLink cover bg="#3E73DC" to={`/departments/${prev.slug}`}>
                   <div className="media navigation__icon--align">
                     <div className="media-left">
                       <FaArrowLeft className="icon" />
@@ -25,7 +25,7 @@ const DepartmentNavigation = ({ prev, next }) => {
                       <strong>{prev.departmentsName}</strong>
                     </div>
                   </div>
-                </Link>
+                </AniLink>
               ) : (
                 ""
               )}
@@ -33,19 +33,19 @@ const DepartmentNavigation = ({ prev, next }) => {
           </div>
           <div className="level-right">
             <div className="level-item">
-            {next ? (
-                <Link to={`/departments/${next.slug}`}>
-              <div className="media navigation__icon--align">
-                <div className="media-content">
-                  <div className="heading has-text-weight-bold">Next</div>
-                  <strong>{next.departmentsName}</strong>
-                </div>
-                <div className="media-right">
-                  <FaArrowRight className="icon" />
-                </div>
-              </div>
-              </Link>
-               ) : (
+              {next ? (
+                <AniLink cover bg="#3E73DC" to={`/departments/${next.slug}`}>
+                  <div className="media navigation__icon--align">
+                    <div className="media-content">
+                      <div className="heading has-text-weight-bold">Next</div>
+                      <strong>{next.departmentsName}</strong>
+                    </div>
+                    <div className="media-right">
+                      <FaArrowRight className="icon" />
+                    </div>
+                  </div>
+                </AniLink>
+              ) : (
                 ""
               )}
             </div>

@@ -1,0 +1,24 @@
+#post__hero {
+    background-position: center center;
+    background-size: cover;
+    font-size: 8rem;
+    position: relative;
+    .subtitle span{
+        display: flex;
+        align-items: center;
+        margin-right: .9rem;
+        .icon {
+            margin-right: .5rem;
+        }
+    }
+}
+
+.hero__before:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, .7);
+}

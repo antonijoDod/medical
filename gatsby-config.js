@@ -32,6 +32,12 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     {
+      resolve: "gatsby-plugin-transition-link",
+      options: {
+        layout: require.resolve(`./src/components/Layout.jsx`),
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,

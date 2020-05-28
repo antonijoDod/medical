@@ -1,8 +1,8 @@
-import React from "react"
-import Layout from "../components/layout"
+import React, {Fragment} from "react"
 import DepartmentHero from "../components/department/DepartmentHero"
 import DepartmentText from "../components/department/DepartmentText"
 import DepartmentNavigation from "../components/department/DepartmentNavigation"
+import SEO from "../components/seo"
 
 const Department = (context) => {
   const {
@@ -16,7 +16,8 @@ const Department = (context) => {
   } = context.pageContext.node
   const {prev, next} = context.pageContext
   return (
-    <Layout>
+    <Fragment>
+      <SEO title={departmentsName} />
       <DepartmentHero departmentImage={departmentImage.fluid.src} />
       <DepartmentText
         departmentsName={departmentsName}
@@ -27,7 +28,7 @@ const Department = (context) => {
         eMail={eMail}
       />
       <DepartmentNavigation prev={prev} next={next} />
-    </Layout>
+    </Fragment>
   )
 }
 
