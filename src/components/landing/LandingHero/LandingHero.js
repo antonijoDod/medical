@@ -30,7 +30,7 @@ const LandingHero = () => {
           <div className="container">
             <div className="column is-offset-1">
             <h1 className="subtitle is-spaced">The best medical center</h1>
-            <h2 className="title is-size-1">
+            <h2 className="title is-size-1 is-size-2-mobile">
               Bringing health to life <br /> for them whole family
             </h2>
             <Link to="/departments" className="button is-primary">

@@ -21,11 +21,11 @@ const departmentsLinks = graphql`
 
 const Header = ({ siteTitle }) => {
   const departmentsLinksQuery = useStaticQuery(departmentsLinks)
-  const [isActive, setIsActive] = useState(false) 
+  const [isActive, setIsActive] = useState(false)
   return (
     <header>
       <nav
-        className="navbar is-link"
+        className="navbar is-link is-spaced"
         role="navigation"
         aria-label="main navigation"
       >
@@ -91,7 +91,7 @@ const Header = ({ siteTitle }) => {
                       activeClassName="has-text-primary"
                       key={link.node.id}
                       to={`/departments/${link.node.slug}`}
-                      className="navbar-item" 
+                      className="navbar-item"
                       onClick={() => setIsActive(false)}
                     >
                       {link.node.departmentsName}
@@ -100,7 +100,13 @@ const Header = ({ siteTitle }) => {
                 </div>
               </div>
               <a className="navbar-item">Contact</a>
-              <Link to="/blog" className="navbar-item">Blog</Link>
+              <Link
+                to="/blog"
+                activeClassName="has-text-primary"
+                className="navbar-item"
+              >
+                Blog
+              </Link>
             </div>
           </div>
         </div>

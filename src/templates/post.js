@@ -38,9 +38,9 @@ export const query = graphql`
      createdAt
      image {
         id
-        fluid {
-          src
-        }
+        fluid(quality: 70, maxWidth: 1500) {
+            ...GatsbyContentfulFluid_withWebp
+          }
       }
      postText{
          id
