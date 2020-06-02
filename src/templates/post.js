@@ -1,12 +1,13 @@
-import React, {Fragment} from 'react'
+import React from 'react'
 import PostHero from '../components/post/PostHero'
 import PostText from '../components/post/PostText'
 import SEO from "../components/seo"
+import Layout from '../components/Layout'
 
 const Post = (context) => {
     const {title, categorie, author, image, createdAt, postText } = context.pageContext.node
     return (
-        <Fragment>
+        <Layout>
             <SEO title={title} />
             <PostHero
                 title={title}
@@ -18,7 +19,7 @@ const Post = (context) => {
             <PostText
                 postText={postText}
             />
-        </Fragment>
+        </Layout>
     )
 }
 

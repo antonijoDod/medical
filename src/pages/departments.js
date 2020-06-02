@@ -1,7 +1,8 @@
-import React, {Fragment} from "react"
+import React from "react"
 import Hero from "../components/shared/Hero"
 import Cards from "../components/shared/Cards"
 import SEO from "../components/seo"
+import Layout from "../components/Layout"
 import { graphql, useStaticQuery } from "gatsby"
 
 const getDepartments = graphql`
@@ -26,14 +27,14 @@ const getDepartments = graphql`
 const Departments = () => {
   const getDepartmentsQuery = useStaticQuery(getDepartments)
   return (
-    <Fragment>
+    <Layout>
       <SEO title="Departments" />
       <Hero
         title="Departments & Programs"
         description="We have a rich history of treating patients and daignosing rare diseases and have won many awards. "
       />
       <Cards data={getDepartmentsQuery} />
-    </Fragment>
+    </Layout>
   )
 }
 

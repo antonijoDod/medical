@@ -1,0 +1,9 @@
+#blog-items {
+    span {
+        display: flex;
+        align-items: center;
+        .icon {
+            margin-right: .5rem;
+        }
+    }
+}

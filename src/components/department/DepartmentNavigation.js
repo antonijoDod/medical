@@ -1,11 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
 import "./departmentNavigation.scss"
 
 const DepartmentNavigation = ({ prev, next }) => {
-  console.log(prev)
   return (
     <section className="section has-background-primary">
       <div className="container">
@@ -13,7 +11,7 @@ const DepartmentNavigation = ({ prev, next }) => {
           <div className="level-left">
             <div className="level-item">
               {prev ? (
-                <AniLink cover bg="#3E73DC" to={`/departments/${prev.slug}`}>
+                <Link to={`/departments/${prev.slug}`}>
                   <div className="media navigation__icon--align">
                     <div className="media-left">
                       <FaArrowLeft className="icon" />
@@ -25,7 +23,7 @@ const DepartmentNavigation = ({ prev, next }) => {
                       <strong>{prev.departmentsName}</strong>
                     </div>
                   </div>
-                </AniLink>
+                </Link>
               ) : (
                 ""
               )}
@@ -34,7 +32,7 @@ const DepartmentNavigation = ({ prev, next }) => {
           <div className="level-right">
             <div className="level-item">
               {next ? (
-                <AniLink cover bg="#3E73DC" to={`/departments/${next.slug}`}>
+                <Link to={`/departments/${next.slug}`}>
                   <div className="media navigation__icon--align">
                     <div className="media-content">
                       <div className="heading has-text-weight-bold">Next</div>
@@ -44,7 +42,7 @@ const DepartmentNavigation = ({ prev, next }) => {
                       <FaArrowRight className="icon" />
                     </div>
                   </div>
-                </AniLink>
+                </Link>
               ) : (
                 ""
               )}

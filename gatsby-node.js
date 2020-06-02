@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { slash } = require(`gatsby-core-utils`)
+const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -9,28 +10,8 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
-            workingTime
-            phoneNumber
             slug
-            eMail
-            doctorsInDepartment
-            doctorsInDepartmentImage {
-              id
-              title
-              description
-              fixed {
-                src
-              }
-            }
             departmentsName
-            departmentsDescription {
-              json
-            }
-            departmentImage {
-              fluid(quality: 90, maxWidth: 1920) {
-                src
-              }
-            }
           }
         }
       }
@@ -79,11 +60,12 @@ exports.createPages = async ({ graphql, actions }) => {
       index === departments.length - 1 ? null : departments[index + 1].node
     createPage({
       path: `departments/${node.slug}`,
-      component: slash(Department),
+      component: Department,
       context: {
         node,
         prev,
         next,
+        slug: node.slug,
       },
     })
   })

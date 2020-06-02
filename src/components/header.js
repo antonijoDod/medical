@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import "../scss/main.scss"
 
@@ -62,54 +61,47 @@ const Header = ({ siteTitle }) => {
             </div>
 
             <div className="navbar-end">
-              <AniLink
-                cover
-                bg="#3E73DC"
+              <Link
                 to="/"
                 activeClassName="has-text-primary"
                 className="navbar-item"
                 onClick={() => setIsActive(false)}
               >
                 Home
-              </AniLink>
-              <AniLink
-                cover
-                bg="#3E73DC"
+              </Link>
+              <Link
                 to="/about"
                 activeClassName="has-text-primary"
                 className="navbar-item"
                 onClick={() => setIsActive(false)}
               >
                 About
-              </AniLink>
+              </Link>
               <div className="navbar-item has-dropdown is-hoverable">
-                <AniLink
+                <Link
                   to="/departments"
-                  cover
-                  bg="#3E73DC"
                   activeClassName="has-text-primary"
                   className="navbar-link"
                   onClick={() => setIsActive(false)}
                 >
                   Departments
-                </AniLink>
+                </Link>
                 <div className="navbar-dropdown">
                   {departmentsLinksQuery.links.edges.map(link => (
-                    <AniLink
+                    <Link
                       activeClassName="has-text-primary"
                       key={link.node.id}
                       to={`/departments/${link.node.slug}`}
-                      className="navbar-item" cover
-                      bg="#3E73DC"
+                      className="navbar-item" 
                       onClick={() => setIsActive(false)}
                     >
                       {link.node.departmentsName}
-                    </AniLink>
+                    </Link>
                   ))}
                 </div>
               </div>
               <a className="navbar-item">Contact</a>
-              <a className="navbar-item">Blog</a>
+              <Link to="/blog" className="navbar-item">Blog</Link>
             </div>
           </div>
         </div>

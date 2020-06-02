@@ -124,7 +124,7 @@ const Footer = () => {
           </div>
         </nav>
         <div className="has-text-centered is-size-6 has-text-grey">
-          Copyright 2019 @ Brand Exponents. All rights reserved.
+          Copyright 2020 @ New Age. All rights reserved.
         </div>
       </div>
     </footer>

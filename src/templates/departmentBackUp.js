@@ -1,27 +1,27 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { graphql } from "gatsby"
 import DepartmentHero from "../components/department/DepartmentHero"
 import DepartmentText from "../components/department/DepartmentText"
 import DepartmentNavigation from "../components/department/DepartmentNavigation"
 import SEO from "../components/seo"
-import Layout from "../components/Layout"
 
-const Department = props => {
+const Department = context => {
   const {
     departmentsName,
     departmentsDescription,
+    departmentImage,
+    doctorsInDepartmentImage,
     workingTime,
     phoneNumber,
     eMail,
-    doctorsInDepartmentImage,
-    departmentImage,
-  } = props.data.item
-  console.log(props)
-  const {prev, next } = props.pageContext
+  } = context.pageContext.node
+  const { prev, next } = context.pageContext
+  let getData = useStaticQuery(query)/*  */
+  console.log(getData)
   return (
-    <Layout>
+    <Fragment>
       <SEO title={departmentsName} />
-      <DepartmentHero departmentImage={departmentImage.fluid} />
+      <DepartmentHero departmentImage={getData.item.departmentImage.fluid} />
       <DepartmentText
         departmentsName={departmentsName}
         departmentsDescription={departmentsDescription}
@@ -31,32 +31,18 @@ const Department = props => {
         eMail={eMail}
       />
       <DepartmentNavigation prev={prev} next={next} />
-    </Layout>
+    </Fragment>
   )
 }
 
 export const query = graphql`
-  query($slug: String!) {
+  query DepartmentItemQuery($slug: String!) {
     item: contentfulDepartments(slug: { eq: $slug }) {
       id
-      departmentsName
       slug
-      departmentsDescription {
-        json
-      }
-      workingTime
-      phoneNumber
-      eMail
-      doctorsInDepartmentImage {
-        id
-        title
-        description
-        fixed {
-          ...GatsbyContentfulFixed_withWebp
-        }
-      }
+      departmentsName
       departmentImage {
-        fluid(quality: 90, maxWidth: 1920) {
+        fluid(quality: 90, maxWidth: 300) {
           ...GatsbyContentfulFluid_withWebp
         }
       }
