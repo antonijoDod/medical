@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
 import './landing.scss'
@@ -33,9 +33,9 @@ const LandingHero = () => {
             <h2 className="title is-size-1">
               Bringing health to life <br /> for them whole family
             </h2>
-            <button className="button is-primary">
+            <Link to="/departments" className="button is-primary">
               Discover more
-            </button>
+            </Link>
             </div>
           </div>
         </div>

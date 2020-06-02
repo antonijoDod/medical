@@ -12,15 +12,17 @@ const getPosts = graphql`
           id
           title
           slug
+          excerpt
           createdAt
+          author
           postText {
             id
             json
           }
           image {
             id
-            fluid {
-              src
+            fluid(quality: 90, maxWidth: 300) {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
@@ -32,10 +34,11 @@ const getPosts = graphql`
 const Blog = () => {
 
     const getPostsQuery = useStaticQuery(getPosts)
+    console.log(getPostsQuery)
   return (
     <Layout>
       <SEO title="Blog" />
-      <BlogItems />
+      <BlogItems data={getPostsQuery.allContentfulPost} />
     </Layout>
   )
 }

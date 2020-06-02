@@ -3,9 +3,10 @@ import PostHero from '../components/post/PostHero'
 import PostText from '../components/post/PostText'
 import SEO from "../components/seo"
 import Layout from '../components/Layout'
+import { graphql } from 'gatsby'
 
-const Post = (context) => {
-    const {title, categorie, author, image, createdAt, postText } = context.pageContext.node
+const Post = (props) => {
+    const {title, categorie, author, image, createdAt, postText } = props.data.post
     return (
         <Layout>
             <SEO title={title} />
@@ -22,5 +23,32 @@ const Post = (context) => {
         </Layout>
     )
 }
+
+export const query = graphql`
+  query($slug: String!) {
+    post: contentfulPost(slug: { eq: $slug }) {
+     id
+     slug
+     title
+     author
+     categorie {
+        id
+        categorieName
+     }
+     createdAt
+     image {
+        id
+        fluid {
+          src
+        }
+      }
+     postText{
+         id
+         json
+     }
+
+    }
+  }
+`
 
 export default Post

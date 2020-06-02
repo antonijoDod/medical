@@ -13,7 +13,7 @@ const PostHero = ({ title, categorie, author, image, createdAt }) => {
                 <span key={categorie.id}>{categorie.categorieName} </span>
               ))}
             </p>
-            <h1 className="title is-spaced is-white has-text-white">{title}</h1>
+            <h1 className="title is-spaced is-white has-text-white is-size-1">{title}</h1>
             <p className="subtitle is-size-6 has-text-white-ter">
               <span>
                 <FaUserCircle className="icon is-small has-text-primary" />

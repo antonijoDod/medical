@@ -21,8 +21,7 @@ const departmentsLinks = graphql`
 
 const Header = ({ siteTitle }) => {
   const departmentsLinksQuery = useStaticQuery(departmentsLinks)
-  const [isActive, setIsActive] = useState(false)
-
+  const [isActive, setIsActive] = useState(false) 
   return (
     <header>
       <nav

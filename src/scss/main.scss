@@ -12,8 +12,15 @@ body {
 }
 
 .rich-text {
+    h2, h3 {
+        margin-top: 1em;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
     p {
-        padding: 1rem 0;
-        color: #666a70;
+        padding-bottom: 1em;
+        color: rgba(27, 27, 27, 0.84);
+        font-size: 1.1rem;
     }
 }

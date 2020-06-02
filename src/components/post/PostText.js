@@ -4,7 +4,7 @@ import { BLOCKS } from "@contentful/rich-text-types"
 
 const PostText = ({postText}) => {
   return (
-    <section className="is-medium section">
+    <section className="section">
       <div className="column is-8 is-offset-2">
         <div className="rich-text">
           {documentToReactComponents(postText.json, {

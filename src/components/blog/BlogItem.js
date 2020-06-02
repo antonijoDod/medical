@@ -1,36 +1,35 @@
-import React from 'react'
+import React from "react"
 import { FaRegClock, FaUserCircle } from "react-icons/fa"
+import { Link } from "gatsby"
+import Image from 'gatsby-image'
+import Moment from "react-moment"
 
-const BlogItem = () => {
-    return (
-        <div className="column is-4">
-            <div className="card">
-              <div className="card-image">
-                <img
-                  src="https://qu3r1v212d48cje431eqa61a-wpengine.netdna-ssl.com/medical/wp-content/uploads/sites/10/2018/11/Services-5-768x550.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="card-content">
-                <span>
-                  <FaRegClock className="icon is-small has-text-primary" />
-                  August 1, 2018
-                </span>
-                <br/>
-                <h2 className="title">This is title</h2>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Accusantium, quis.
-                </p>
-                <br />
-                <span>
-                  <FaUserCircle className="icon has-text-primary" />
-                  Marko Markic
-                </span>
-              </div>
-            </div>
+const BlogItem = ({ title, excerpt, image, imageAlt, slug, author, createdAt }) => {
+  return (
+    <div className="column is-4">
+      <Link to={`/blog/${slug}`}>
+        <div className="card">
+          <div className="card-image">
+            <Image fluid={image} alt={imageAlt} />
           </div>
-    )
+          <div className="card-content">
+            <span>
+              <FaRegClock className="icon is-small has-text-primary" />
+              <Moment format="D. MMM YYYY">{createdAt}</Moment>
+            </span>
+            <br />
+            <h2 className="title is-size-4">{title}</h2>
+            <p>{excerpt}</p>
+            <br />
+            <span>
+              <FaUserCircle className="icon has-text-primary" />
+              {author}
+            </span>
+          </div>
+        </div>
+      </Link>
+    </div>
+  )
 }
 
 export default BlogItem
