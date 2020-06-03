@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import Moment from "react-moment"
 import { FaRegClock, FaUserCircle } from "react-icons/fa"
 import "./posthero.scss"
@@ -15,11 +16,26 @@ const PostHero = ({ title, categorie, author, image, createdAt }) => {
       <div className="column is-8 is-offset-2">
         <div className="hero-body">
           <div className="container">
-            <p className="heading">
-              {categorie.map(categorie => (
-                <span key={categorie.id}>{categorie.categorieName} </span>
-              ))}
-            </p>
+            <nav
+              class="breadcrumb has-text-white has-succeeds-separator"
+              aria-label="breadcrumbs"
+            >
+              <ul>
+                <li>
+                  <Link to="/blog">Blog</Link>
+                </li>{" "}
+                {categorie.map(categorie => (
+                  <li>
+                    <Link to={`/categories/${categorie.slug}`}>{categorie.categorieName}</Link>
+                  </li>
+                ))}
+                <li class="is-active">
+                  <a href="!#" aria-current="page">
+                    {title}
+                  </a>
+                </li>
+              </ul>
+            </nav>
             <h1 className="title is-spaced is-white has-text-white is-size-1">
               {title}
             </h1>

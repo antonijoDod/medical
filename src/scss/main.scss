@@ -4,20 +4,26 @@
 
 $menu-item-hover-color: hsl(171, 100%, 41%);
 
+$breadcrumb-item-color: white;
+$breadcrumb-item-hover-color: hsl(171, 100%, 41%);
+$breadcrumb-item-active-color: hsl(171, 100%, 41%);
 @import "~bulma/bulma.sass";
-
 
 body {
     font-family: 'Open Sans', sans-serif;
 }
 
 .rich-text {
-    h2, h3 {
+
+    h2,
+    h3 {
         margin-top: 1em;
     }
+
     h2 {
         font-size: 1.5rem;
     }
+
     p {
         padding-bottom: 1em;
         color: rgba(27, 27, 27, 0.84);

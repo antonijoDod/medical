@@ -34,6 +34,7 @@ export const query = graphql`
      categorie {
         id
         categorieName
+        slug
      }
      createdAt
      image {
