@@ -43,7 +43,7 @@ const LandingHero = () => {
               data-sal-delay="400"
               data-sal-easing="easeOutElastic"
             >
-              Bringing health to life <br /> for them whole family
+              Bringing health to life <br /> for them whole family!
             </h2>
             <Link
               to="/departments"
