@@ -7,7 +7,6 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
 
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -30,12 +29,6 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
       <Footer />
-      <Helmet>
-        <script
-          src="//code.tidio.co/k95j1josgnp7wzzvxt8tfa12jqmr4weg.js"
-          async
-        ></script>
-      </Helmet>
     </>
   )
 }
