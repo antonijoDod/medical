@@ -27,29 +27,11 @@ const LandingHero = () => {
       <div className="hero-body">
         <div className="container">
           <div className="column is-offset-1">
-            <h1
-              className="subtitle is-spaced"
-              data-sal="slide-up"
-              data-sal-delay="300"
-              data-sal-easing="easeInOutCubic"
-            >
-              The best medical center
-            </h1>
-            <h2
-              className="title is-size-1 is-size-2-mobile"
-              data-sal="slide-up"
-              data-sal-delay="400"
-              data-sal-easing="easeOutElastic"
-            >
+            <h1 className="subtitle is-spaced">The best medical center</h1>
+            <h2 className="title is-size-1 is-size-2-mobile">
               Bringing health to life <br /> for them whole family!
             </h2>
-            <Link
-              to="/departments"
-              className="button is-primary"
-              data-sal="slide-up"
-              data-sal-delay="500"
-              data-sal-easing="easeOutElastic"
-            >
+            <Link to="/departments" className="button is-primary">
               Discover more
             </Link>
           </div>

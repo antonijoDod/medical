@@ -23,34 +23,14 @@ const Intro = () => {
       <div className="container">
         <div className="columns is-vcentered">
           <div className="column is-5 is-offset-1">
-            <Image
-              fluid={getImage.doctor.childImageSharp.fluid}
-              alt="Doctor"
-            />
+            <Image fluid={getImage.doctor.childImageSharp.fluid} alt="Doctor" />
           </div>
           <div className="column is-5">
-            <h6
-              className="subtitle is-spaced is-size-7 has-text-weight-bold has-text-grey"
-              data-sal="slide-up"
-              data-sal-delay="200"
-              data-sal-easing="easeOutElastic"
-            >
+            <h6 className="subtitle is-spaced is-size-7 has-text-weight-bold has-text-grey">
               WELCOME TO OUR PROFESSIONAL
             </h6>
-            <h2
-              className="title"
-              data-sal="slide-up"
-              data-sal-delay="300"
-              data-sal-easing="easeOutElastic"
-            >
-              Healthcare Center
-            </h2>
-            <p
-              data-sal="slide-up"
-              data-sal-delay="400"
-              data-sal-easing="easeOutElastic"
-            >
-              {" "}
+            <h2 className="title">Healthcare Center</h2>
+            <p>
               We collaborate with organizations that are keen to transform the
               legal industry with tech. Using the legal design process, we can
               help you ideate, build prototypes, test concepts and implement
