@@ -14,22 +14,18 @@
     "gatsby-background-image": "^1.1.1",
     "gatsby-cli": "^2.12.42",
     "gatsby-image": "^2.4.4",
-    "gatsby-paginate": "^1.1.1",
     "gatsby-plugin-manifest": "^2.4.5",
     "gatsby-plugin-offline": "^3.2.3",
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-sass": "^2.3.2",
     "gatsby-plugin-scroll-reveal": "0.0.7",
     "gatsby-plugin-sharp": "^2.6.4",
-    "gatsby-plugin-tidio": "^1.0.3",
-    "gatsby-plugin-transition-link": "^1.18.0",
     "gatsby-remark-images-contentful": "^2.3.3",
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-contentful": "^2.3.12",
     "gatsby-source-filesystem": "^2.3.4",
     "gatsby-transformer-remark": "^2.8.13",
     "gatsby-transformer-sharp": "^2.5.2",
-    "gsap": "^3.2.6",
     "moment": "^2.26.0",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
@@ -38,7 +34,8 @@
     "react-helmet": "^6.0.0",
     "react-icons": "^3.10.0",
     "react-moment": "^0.9.7",
-    "react-uuid": "^1.0.2"
+    "react-uuid": "^1.0.2",
+    "typeface-open-sans": "0.0.75"
   },
   "devDependencies": {
     "prettier": "2.0.5"

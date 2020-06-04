@@ -56,14 +56,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-tidio`,
-      options: {
-        tidioId: "//code.tidio.co/k95j1josgnp7wzzvxt8tfa12jqmr4weg.js",
-        // get this from the tidio script widget
-        development: true,
-      },
-    },
-    {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
           threshold: 1, // Percentage of an element's area that needs to be visible to launch animation
