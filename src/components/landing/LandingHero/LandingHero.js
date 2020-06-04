@@ -18,13 +18,11 @@ const backgroundImage = graphql`
 
 const LandingHero = () => {
   const getImage = useStaticQuery(backgroundImage)
-  const heroBgImage = getImage.heroBg.childImageSharp.fluid
   return (
     <BackgroundImage
       Tag="section"
       className="hero is-success is-fullheight landing-background"
-      fluid={heroBgImage}
-      backgroundColor={`grey`}
+      fluid={getImage.heroBg.childImageSharp.fluid}
     >
       <div className="hero-body">
         <div className="container">

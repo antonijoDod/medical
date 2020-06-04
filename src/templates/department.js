@@ -16,7 +16,6 @@ const Department = props => {
     doctorsInDepartmentImage,
     departmentImage,
   } = props.data.item
-  console.log(props)
   const {prev, next } = props.pageContext
   return (
     <Layout>

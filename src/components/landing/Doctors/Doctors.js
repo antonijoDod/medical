@@ -52,7 +52,6 @@ const doctorsImages = graphql`
 const Doctors = () => {
   const doctors = useStaticQuery(doctorsImages)
   const { doctor1, doctor2, doctor3, doctor4, doctor5, doctor6 } = doctors
-  console.log(doctor1)
   return (
     <section className="section is-medium">
       <div className="column is-offset-1 is-10">

@@ -3,7 +3,6 @@ import BlogItem from './BlogItem'
 import './blogItems.scss'
 
 const BlogItems = ({data}) => {
-  console.log(data)
   return (
     <section className="section" id="blog-items">
       <div className="column is-10 is-offset-1">

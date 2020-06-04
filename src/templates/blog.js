@@ -7,7 +7,6 @@ import Hero from "../components/shared/Hero"
 import Pagination from '../components/shared/Pagination'
 
 const Blog = (props) => {
-  console.log(props)
   const {previousPagePath, nextPagePath, numberOfPages, humanPageNumber} = props.pageContext
   return (
     <Layout>

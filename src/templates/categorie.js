@@ -1,10 +1,10 @@
 import React from "react"
+import {graphql} from 'gatsby'
 import Layout from "../components/Layout"
 import Hero from "../components/shared/Hero"
 import Categories from "../components/categorie/Categories"
 
 const Categorie = props => {
-  console.log(props)
   const { categorieName, slug, post } = props.data.categorie
   return (
     <Layout>
