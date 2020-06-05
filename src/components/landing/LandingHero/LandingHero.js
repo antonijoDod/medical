@@ -9,7 +9,7 @@ const backgroundImage = graphql`
     heroBg: file(relativePath: { eq: "medical.jpg" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 1920) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
